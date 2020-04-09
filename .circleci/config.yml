@@ -16,9 +16,8 @@ jobs:
           name: Run tests
           command: |
             docker-compose up -d
-            docker-compose run dockerapp python test.py
-
-	- deploy:
+            docker-compose run dockerapp python test.pyx
+      - deploy:
           name: Pushh app
           command:
            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
